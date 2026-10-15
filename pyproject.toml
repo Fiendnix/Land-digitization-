@@ -1,0 +1,23 @@
+[project]
+name = "hackathon"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "folium>=0.20.0",
+    "geopandas>=1.2.0",
+    "opencv-python-headless>=5.0.0.93",
+    "pandas>=3.0.6",
+    "pillow>=12.3.0",
+    "pymupdf>=1.28.2",
+    "pytesseract>=0.3.13",
+    "shapely>=2.2.0",
+    "streamlit>=1.66.0",
+    "streamlit-folium>=0.27.4",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]

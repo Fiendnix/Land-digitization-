@@ -1,0 +1,39 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+*.secret
+
+# Local databases
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite-*
+
+# User-uploaded documents
+uploads/
+uploaded_documents/
+user_uploads/
+
+# Temporary files and editor artifacts
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
