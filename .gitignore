@@ -43,6 +43,8 @@ data/uploads/
 *.doc
 *.docx
 !data/demo/sample-land-record.png
+!data/demo/test_documents/
+!data/demo/test_documents/*.pdf
 
 # Temporary files and editor artifacts
 *.tmp

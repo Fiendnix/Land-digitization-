@@ -161,8 +161,11 @@ If only some stable demo IDs exist, seeding fails without overwriting data.
 The script also generates
 [`data/demo/sample-land-record.png`](data/demo/sample-land-record.png), a
 fictional scanned-style sample. Upload it from Digitize Record, inspect the
-OCR suggestions, edit a field, and save to demonstrate intake. Full sample
-descriptions and explicit reset steps are in [data/demo/README.md](data/demo/README.md).
+OCR suggestions, edit a field, and save to demonstrate intake. Three more
+fictional OCR test PDFs are in `data/demo/test_documents/`, covering a
+complete record, missing owner/duplicate survey values, and invalid area on a
+worn scan. Full sample descriptions and explicit reset steps are in
+[data/demo/README.md](data/demo/README.md).
 
 **Reset is destructive.** This affects only
 `data/demo_land_records.sqlite3` and its SQLite WAL/SHM sidecars; it does not

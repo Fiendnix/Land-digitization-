@@ -10,6 +10,7 @@
 - [ ] Confirm the top-of-page notice says **DEMO MODE · ILLUSTRATIVE DATA ONLY**.
 - [ ] Confirm the dashboard has ten records and the expected score categories.
 - [ ] Confirm the sample scan download is available on Digitize Record.
+- [ ] Optional: upload the PDFs in `data/demo/test_documents/` to test full extraction, missing owner/duplicate survey, and invalid area cases.
 - [ ] Keep the regular `data/land_records.sqlite3` and any private records out of
       the presentation and repository.
 
