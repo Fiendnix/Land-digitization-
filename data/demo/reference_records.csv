@@ -1,0 +1,11 @@
+parcel_id,survey_number,owner_name,area,land_use,dataset_label
+DEMO-PARCEL-001,DEMO-SURVEY-001,Avery Sample,2.5,Agricultural,Fictional demo reference
+DEMO-PARCEL-002,DEMO-SURVEY-002,Jordan Fiction,0.8,Residential,Fictional demo reference
+DEMO-PARCEL-003,DEMO-SURVEY-003,Casey Placeholder,3.2,Agricultural,Fictional demo reference
+DEMO-PARCEL-004,DEMO-SURVEY-003,Morgan Imaginary,2.1,Agricultural,Fictional demo reference
+DEMO-PARCEL-005,DEMO-SURVEY-005,,1.4,Unknown,Fictional demo reference
+DEMO-PARCEL-006,DEMO-SURVEY-006,Quinn Fiction,0.6,Commercial,Fictional demo reference
+DEMO-PARCEL-007,DEMO-SURVEY-007,Notional Reference,1.1,Residential,Fictional demo reference
+DEMO-PARCEL-008,DEMO-SURVEY-008,Taylor Sample,4.0,Agricultural,Fictional demo reference
+DEMO-PARCEL-009,DEMO-SURVEY-009,Robin Fiction,1.7,Wasteland,Fictional demo reference
+DEMO-PARCEL-010,DEMO-SURVEY-010,Sam Placeholder,2.8,Orchard,Fictional demo reference

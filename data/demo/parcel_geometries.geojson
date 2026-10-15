@@ -1,0 +1,56 @@
+{
+  "type": "FeatureCollection",
+  "name": "fictional_demo_parcels_not_authoritative",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"record_id": "DEMO-0001", "parcel_id": "DEMO-PARCEL-001", "district": "Demo District", "village": "Maple Example", "demo_outcome": "valid"},
+      "geometry": {"type": "Polygon", "coordinates": [[[77.000, 28.000], [77.010, 28.000], [77.010, 28.010], [77.000, 28.010], [77.000, 28.000]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"record_id": "DEMO-0002", "parcel_id": "DEMO-PARCEL-002", "district": "Demo District", "village": "Maple Example", "demo_outcome": "valid"},
+      "geometry": {"type": "Polygon", "coordinates": [[[77.020, 28.000], [77.030, 28.000], [77.030, 28.010], [77.020, 28.010], [77.020, 28.000]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"record_id": "DEMO-0003", "parcel_id": "DEMO-PARCEL-003", "district": "Demo District", "village": "Willow Example", "demo_outcome": "overlap"},
+      "geometry": {"type": "Polygon", "coordinates": [[[77.040, 28.000], [77.055, 28.000], [77.055, 28.012], [77.040, 28.012], [77.040, 28.000]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"record_id": "DEMO-0004", "parcel_id": "DEMO-PARCEL-004", "district": "Demo District", "village": "Willow Example", "demo_outcome": "overlap"},
+      "geometry": {"type": "Polygon", "coordinates": [[[77.050, 28.004], [77.064, 28.004], [77.064, 28.015], [77.050, 28.015], [77.050, 28.004]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"record_id": "DEMO-0005", "parcel_id": "DEMO-PARCEL-005", "district": "Demo District", "village": "Sample Hamlet", "demo_outcome": "valid"},
+      "geometry": {"type": "Polygon", "coordinates": [[[77.070, 28.000], [77.080, 28.000], [77.080, 28.010], [77.070, 28.010], [77.070, 28.000]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"record_id": "DEMO-0006", "parcel_id": "DEMO-PARCEL-006", "district": "Demo District", "village": "Sample Hamlet", "demo_outcome": "invalid"},
+      "geometry": {"type": "Polygon", "coordinates": [[[77.090, 28.000], [77.102, 28.012], [77.090, 28.012], [77.102, 28.000], [77.090, 28.000]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"record_id": "DEMO-0007", "parcel_id": "DEMO-PARCEL-007", "district": "Demo District", "village": "Cedar Example", "demo_outcome": "valid"},
+      "geometry": {"type": "Polygon", "coordinates": [[[77.110, 28.000], [77.120, 28.000], [77.120, 28.010], [77.110, 28.010], [77.110, 28.000]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"record_id": "DEMO-0008", "parcel_id": "DEMO-PARCEL-008", "district": "Demo District", "village": "Cedar Example", "demo_outcome": "overlap"},
+      "geometry": {"type": "Polygon", "coordinates": [[[77.130, 28.000], [77.144, 28.000], [77.144, 28.012], [77.130, 28.012], [77.130, 28.000]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"record_id": "DEMO-0009", "parcel_id": "DEMO-PARCEL-009", "district": "Demo District", "village": "Cedar Example", "demo_outcome": "overlap"},
+      "geometry": {"type": "Polygon", "coordinates": [[[77.140, 28.004], [77.154, 28.004], [77.154, 28.015], [77.140, 28.015], [77.140, 28.004]]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"record_id": "DEMO-0010", "parcel_id": "DEMO-PARCEL-010", "district": "Demo District", "village": "Maple Example", "demo_outcome": "valid"},
+      "geometry": {"type": "Polygon", "coordinates": [[[77.160, 28.000], [77.170, 28.000], [77.170, 28.010], [77.160, 28.010], [77.160, 28.000]]]}
+    }
+  ]
+}

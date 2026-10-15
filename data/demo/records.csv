@@ -1,0 +1,11 @@
+id,parcel_id,survey_number,owner_name,district,village,land_use,area,area_unit,document_year,ocr_confidence
+DEMO-0001,DEMO-PARCEL-001,DEMO-SURVEY-001,Avery Sample,Demo District,Maple Example,Agricultural,2.5,hectares,2022,96
+DEMO-0002,DEMO-PARCEL-002,DEMO-SURVEY-002,Jordan Fiction,Demo District,Maple Example,Residential,0.8,hectares,2021,91
+DEMO-0003,DEMO-PARCEL-003,DEMO-SURVEY-003,Casey Placeholder,Demo District,Willow Example,Agricultural,3.2,hectares,2020,82
+DEMO-0004,DEMO-PARCEL-004,DEMO-SURVEY-003,Morgan Imaginary,Demo District,Willow Example,Agricultural,2.1,hectares,2019,68
+DEMO-0005,DEMO-PARCEL-005,DEMO-SURVEY-005,Not detected,Demo District,Sample Hamlet,Unknown,1.4,hectares,2023,72
+DEMO-0006,DEMO-PARCEL-006,DEMO-SURVEY-006,Quinn Fiction,Demo District,Sample Hamlet,Commercial,0.6,hectares,2022,18
+DEMO-0007,DEMO-PARCEL-007,DEMO-SURVEY-007,Riley Demo,Demo District,Cedar Example,Residential,1.1,hectares,2020,64
+DEMO-0008,DEMO-PARCEL-008,DEMO-SURVEY-008,Taylor Sample,Demo District,Cedar Example,Agricultural,4.0,hectares,2018,24
+DEMO-0009,DEMO-PARCEL-009,DEMO-SURVEY-009,Robin Fiction,Demo District,Cedar Example,Wasteland,1.7,hectares,2017,9
+DEMO-0010,DEMO-PARCEL-010,DEMO-SURVEY-010,Sam Placeholder,Demo District,Maple Example,Orchard,2.8,hectares,2024,99

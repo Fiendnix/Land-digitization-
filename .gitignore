@@ -12,6 +12,10 @@ __pycache__/
 .env.*
 !.env.example
 secrets/
+.streamlit/secrets.toml
+credentials/
+credentials*.json
+*service-account*.json
 *.pem
 *.key
 *.p12
@@ -29,10 +33,23 @@ secrets/
 uploads/
 uploaded_documents/
 user_uploads/
+data/uploads/
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.tif
+*.tiff
+*.doc
+*.docx
+!data/demo/sample-land-record.png
 
 # Temporary files and editor artifacts
 *.tmp
 *.temp
+*.log
+*.bak
+*.orig
 *.swp
 *.swo
 *~

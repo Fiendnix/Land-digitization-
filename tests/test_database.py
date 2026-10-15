@@ -67,7 +67,7 @@ def test_record_update_changes_fields_and_updated_timestamp(database_path, recor
     assert updated["updated_at"] >= created["updated_at"]
 
 
-def test_record_delete_cascades_to_related_rows(database_path, record_fields):
+def test_record_with_audit_history_cannot_be_deleted(database_path, record_fields):
     record = create_land_record(database_path, record_fields)
     create_validation_result(
         database_path,
@@ -88,10 +88,10 @@ def test_record_delete_cascades_to_related_rows(database_path, record_fields):
             "message": "Review the source document",
         },
     )
-    assert delete_land_record(database_path, record["id"])
-    assert get_land_record(database_path, record["id"]) is None
-    assert list_validation_results(database_path, record["id"]) == []
-    assert list_alerts(database_path, record["id"]) == []
+    assert not delete_land_record(database_path, record["id"])
+    assert get_land_record(database_path, record["id"]) is not None
+    assert list_validation_results(database_path, record["id"])
+    assert list_alerts(database_path, record["id"])
 
 
 def test_foreign_keys_are_enforced(database_path):
@@ -156,8 +156,12 @@ def test_related_entities_and_canonical_audit_payload(database_path, record_fiel
     )
     assert validation in list_validation_results(database_path, record["id"])
     assert audit in list_audit_events(database_path, record["id"])
-    assert audit["canonical_payload"] == '{"a":"value","z":1}'
-    assert datetime.fromisoformat(audit["event_timestamp"]).isoformat() == "2026-01-01T21:34:05+00:00"
+    assert audit["canonical_payload"] == (
+        '{"actor":"system","payload":{"a":"value","z":1}}'
+    )
+    assert datetime.fromisoformat(audit["event_timestamp"]).isoformat() == (
+        "2026-01-01T21:34:05+00:00"
+    )
     assert alert["resolved"] is False
     resolved = resolve_alert(database_path, alert["id"])
     assert resolved is not None and resolved["resolved"] is True
@@ -179,3 +183,33 @@ def test_record_validation_rejects_bad_types_and_bounds(database_path, record_fi
 def test_data_persists_across_module_connections(database_path, record_fields):
     created = create_land_record(database_path, record_fields)
     assert get_land_record(database_path, created["id"])["parcel_id"] == "PARCEL-001"
+
+
+def test_record_preserves_optional_area_unit_and_source_hash(database_path, record_fields):
+    record_fields["area_unit"] = "hectares"
+    record_fields["source_document_hash"] = "a" * 64
+    created = create_land_record(database_path, record_fields)
+
+    assert created["area_unit"] == "hectares"
+    assert created["source_document_hash"] == "a" * 64
+
+
+def test_initialize_migrates_existing_land_records_table(database_path):
+    with sqlite3.connect(database_path) as connection:
+        connection.execute("DROP TABLE land_records")
+        connection.execute("CREATE TABLE land_records (id TEXT PRIMARY KEY)")
+        connection.execute("INSERT INTO land_records (id) VALUES ('existing-record')")
+
+    initialize_database(database_path)
+
+    with sqlite3.connect(database_path) as connection:
+        columns = {row[1] for row in connection.execute("PRAGMA table_info(land_records)")}
+        assert "area_unit" in columns
+        assert connection.execute("SELECT id FROM land_records").fetchone()[0] == "existing-record"
+
+
+def test_duplicate_record_ids_are_rejected(database_path, record_fields):
+    create_land_record(database_path, {"id": "chosen-id", **record_fields})
+
+    with pytest.raises(sqlite3.IntegrityError):
+        create_land_record(database_path, {"id": "chosen-id", **record_fields})
