@@ -34,7 +34,19 @@ class OCRError(Exception):
 
 def _configure_tesseract() -> None:
     custom_path = os.environ.get("TESSERACT_CMD", "").strip()
-    pytesseract.pytesseract.tesseract_cmd = custom_path or "tesseract"
+    if custom_path:
+        pytesseract.pytesseract.tesseract_cmd = custom_path
+        return
+
+    pytesseract.pytesseract.tesseract_cmd = "tesseract"
+    if os.name == "nt":
+        for default_path in [
+            r"C:\Program Files\Tesseract-OCR\tesseract.exe",
+            r"C:\Program Files (x86)\Tesseract-OCR\tesseract.exe",
+        ]:
+            if Path(default_path).is_file():
+                pytesseract.pytesseract.tesseract_cmd = default_path
+                break
 
 
 def is_tesseract_available() -> bool:
